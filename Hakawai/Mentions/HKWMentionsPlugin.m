@@ -507,7 +507,7 @@ typedef NS_ENUM(NSInteger, HKWMentionsState) {
  */
 - (void)toggleMentionsFormattingAtRange:(NSRange)range
                                selected:(BOOL)selected {
-    if (range.location == NSNotFound || range.length == 0) {
+    if (range.location == NSNotFound || range.length == 0 || [self.parentTextView.attributedText length] == 0) {
         return;
     }
 #ifdef DEBUG
